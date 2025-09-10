@@ -98,17 +98,20 @@
   </section>
 
   <script>
-    function toggleAbstract() {
-      const abstract = document.getElementById("abstract");
-      const btn = document.querySelector(".toggle-btn");
+  document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("toggle-btn")) {
+      const targetId = e.target.getAttribute("data-target");
+      const abstract = document.getElementById(targetId);
+
       if (abstract.style.display === "block") {
         abstract.style.display = "none";
-        btn.textContent = "Show Abstract";
+        e.target.textContent = "Show Abstract";
       } else {
         abstract.style.display = "block";
-        btn.textContent = "Hide Abstract";
+        e.target.textContent = "Hide Abstract";
       }
     }
-  </script>
+  });
+</script>
 </body>
 </html>
