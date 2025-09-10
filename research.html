@@ -6,36 +6,22 @@
   <title>Jorge de la Cal Medina – Research</title>
   <link rel="stylesheet" href="assets/style.css">
   <style>
-    /* Simple modal styling */
-    .modal {
-      display: none; 
-      position: fixed; 
-      z-index: 1000; 
-      left: 0; top: 0;
-      width: 100%; height: 100%; 
-      overflow: auto; 
-      background-color: rgba(0,0,0,0.5);
-    }
-    .modal-content {
-      background: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 600px;
+    .abstract {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border-left: 3px solid #444;
+      background: #f9f9f9;
       line-height: 1.5;
     }
-    .close {
-      float: right;
-      font-size: 1.2rem;
-      font-weight: bold;
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: #0066cc;
       cursor: pointer;
-    }
-    .project-links {
-      margin-top: 5px;
-    }
-    .project-links a,
-    .project-links button {
-      margin-right: 10px;
+      padding: 0;
+      font-size: 0.95rem;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -65,56 +51,46 @@
         Tipology of online services websites in Latin America and the Caribbean (with Bernardo Díaz de Astarloa)
         <div class="project-links">
           <a href="https://ideas.repec.org/p/ecr/col025/81478.html" target="_blank">Link</a>
-          <button id="openAbstract">Show Abstract</button>
+          <button class="toggle-btn" onclick="toggleAbstract()">Show Abstract</button>
+        </div>
+        <div id="abstract" class="abstract">
+          <p>
+            A pesar de la importancia creciente del comercio de servicios en entornos digitales,
+            su medición es incipiente y enfrenta limitaciones, especialmente en países en desarrollo.
+            Este trabajo busca reducir esta brecha mediante la construcción de una nueva base de datos
+            de más de 2.600 sitios en línea asociados al comercio de servicios en sectores seleccionados
+            en Argentina, Brasil, Chile, Colombia, México y Perú. A partir del análisis de los sitios,
+            se caracterizan sus modelos de negocio y su funcionalidad de acuerdo con un conjunto de
+            atributos que permite entender cómo es la presencia en línea de los distintos sectores y
+            cómo las empresas generan, entregan y capturan valor a través de los sitios. Luego, se
+            aplican técnicas de clusterización para identificar patrones comunes y tipologías de sitios.
+            Finalmente, a partir de datos de tráfico de visitas a cada sitio en cada país, se caracteriza
+            la actividad en línea de los sectores seleccionados, incluyendo un análisis por género y por
+            segmentos de edad. Los resultados sugieren que, desde el punto de vista de la lógica de los
+            modelos de negocios, la semejanza entre sitios no sigue un ordenamiento sectorial, sino que
+            hay una variedad de configuraciones dentro de un mismo sector, con predominancia de sitios
+            que crean valor a través de ventas directas o servicios de intermediación. No se observan
+            diferencias en la caracterización de atributos entre los principales mercados de comercio
+            electrónico de la región. Los resultados pueden aportar elementos para mejorar o refinar el
+            diseño de políticas públicas para fomentar el comercio de servicios a través de canales
+            digitales, incluyendo la capacidad de las empresas para concretar ventas, nacionales o
+            transfronterizas, a través de una presencia en línea.
+          </p>
         </div>
       </li>
     </ul>
   </section>
 
-  <!-- Modal -->
-  <div id="abstractModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h3>Abstract</h3>
-      <p>
-        A pesar de la importancia creciente del comercio de servicios en entornos digitales, 
-        su medición es incipiente y enfrenta limitaciones, especialmente en países en desarrollo. 
-        Este trabajo busca reducir esta brecha mediante la construcción de una nueva base de datos 
-        de más de 2.600 sitios en línea asociados al comercio de servicios en sectores seleccionados 
-        en Argentina, Brasil, Chile, Colombia, México y Perú. A partir del análisis de los sitios, 
-        se caracterizan sus modelos de negocio y su funcionalidad de acuerdo con un conjunto de 
-        atributos que permite entender cómo es la presencia en línea de los distintos sectores y 
-        cómo las empresas generan, entregan y capturan valor a través de los sitios. Luego, se 
-        aplican técnicas de clusterización para identificar patrones comunes y tipologías de sitios. 
-        Finalmente, a partir de datos de tráfico de visitas a cada sitio en cada país, se caracteriza 
-        la actividad en línea de los sectores seleccionados, incluyendo un análisis por género y por 
-        segmentos de edad. Los resultados sugieren que, desde el punto de vista de la lógica de los 
-        modelos de negocios, la semejanza entre sitios no sigue un ordenamiento sectorial, sino que 
-        hay una variedad de configuraciones dentro de un mismo sector, con predominancia de sitios 
-        que crean valor a través de ventas directas o servicios de intermediación. No se observan 
-        diferencias en la caracterización de atributos entre los principales mercados de comercio 
-        electrónico de la región. Los resultados pueden aportar elementos para mejorar o refinar el 
-        diseño de políticas públicas para fomentar el comercio de servicios a través de canales 
-        digitales, incluyendo la capacidad de las empresas para concretar ventas, nacionales o 
-        transfronterizas, a través de una presencia en línea.
-      </p>
-    </div>
-  </div>
-
   <script>
-    const modal = document.getElementById("abstractModal");
-    const btn = document.getElementById("openAbstract");
-    const span = document.querySelector(".close");
-
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
+    function toggleAbstract() {
+      const abstract = document.getElementById("abstract");
+      const btn = document.querySelector(".toggle-btn");
+      if (abstract.style.display === "block") {
+        abstract.style.display = "none";
+        btn.textContent = "Show Abstract";
+      } else {
+        abstract.style.display = "block";
+        btn.textContent = "Hide Abstract";
       }
     }
   </script>
