@@ -23,6 +23,9 @@
       font-size: 0.95rem;
       text-decoration: underline;
     }
+    li {
+    margin-bottom: 1.5em; /* increases vertical space between items */
+      }
   </style>
 </head>
 <body>
@@ -37,9 +40,10 @@
 
   <section>
   <h2>Academic Work</h2>
-  <ul>
-    <li>
-      Weak identification robust methods for production function estimation
+  <div class="project">
+      <div class="project-title">
+        Weak identification robust methods for production function estimation
+      </div>
       <div class="project-links">
         <button class="toggle-btn" data-target="abs-weakid">Show Abstract</button>
         <a href="assets/papers/weakID-PF.pdf" target="_blank" rel="noopener">Working Paper</a>
@@ -55,9 +59,11 @@
           These procedures remain valid regardless of identification strength and are straightforward to implement for applied work.
         </p>
       </div>
-    </li>
-    <li>
-      TFP estimation in European countries (with Marco Miorandi)
+    </div>
+    <div class="project">
+      <div class="project-title">
+        TFP estimation in European countries (with Marco Miorandi)
+      </div>
       <div class="project-links">
         <button class="toggle-btn" data-target="abs-tfp">Show Abstract</button>
       </div>
@@ -68,9 +74,11 @@
           This provides a comparative view of efficiency dynamics across Europe.
         </p>
       </div>
-    </li>
-    <li>
+    </div>
+    <div class="project">
+      <div class="project-title">
       Heterogeneous firms model with capital accumulation, and endogenous entry and exit
+      </div>
       <div class="project-links">
         <button class="toggle-btn" data-target="abs-firm">Show Abstract</button>
       </div>
@@ -83,15 +91,16 @@
           This allows to quantify how frictions generate dispersion in marginal products and translate into aggregate TFP losses using empirical data.
         </p>
       </div>
-    </li>
-  </ul>
+    </div>
+ 
 </section>
 
   <section>
     <h2>Policy Work</h2>
-    <ul>
-      <li>
+      <div class="project">
+      <div class="project-title">
         Tipology of online services websites in Latin America and the Caribbean (with Bernardo Díaz de Astarloa)
+        </div>
         <div class="project-links">
           <button class="toggle-btn" data-target="abs-bernardo">Show Abstract</button>
           <a href="https://ideas.repec.org/p/ecr/col025/81478.html" target="_blank">Link</a>
@@ -120,8 +129,8 @@
             transfronterizas, a través de una presencia en línea.
           </p>
         </div>
-      </li>
-    </ul>
+      </div>
+
   </section>
 
   <script>
