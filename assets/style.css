@@ -16,3 +16,23 @@ nav a {
 }
 nav a:hover { text-decoration: underline; }
 section { margin-bottom: 1.5rem; }
+
+.profile {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  column-gap: 1.25rem;
+  align-items: start;
+}
+.profile img {
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
+}
+.profile .lead { margin-top: 0; }
+.profile .contact { margin-top: 1.75rem; }
+.profile .disclaimer { color: #555; }
+
+@media (max-width: 640px) {
+  .profile { grid-template-columns: 1fr; }
+  .profile img { margin-bottom: 0.25rem; }
+}
