@@ -17,15 +17,16 @@ nav a {
 nav a:hover { text-decoration: underline; }
 section { margin-bottom: 1.5rem; }
 
-.profile {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  column-gap: 1.25rem;
-  align-items: start;
+.profile::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .profile img {
+  float: left;
   width: 180px;
   height: auto;
+  margin: 0 1.25rem 0.75rem 0;
   border-radius: 8px;
 }
 .profile .lead { margin-top: 0; }
@@ -33,6 +34,9 @@ section { margin-bottom: 1.5rem; }
 .profile .disclaimer { color: #555; }
 
 @media (max-width: 640px) {
-  .profile { grid-template-columns: 1fr; }
-  .profile img { margin-bottom: 0.25rem; }
+  .profile img {
+    float: none;
+    display: block;
+    margin: 0 0 1rem;
+  }
 }
